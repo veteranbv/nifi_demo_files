@@ -3,7 +3,6 @@
   "services": {
     "query": {
       "idQueue": [
-        0,
         1,
         2,
         3,
@@ -13,6 +12,13 @@
         8
       ],
       "list": {
+        "0": {
+          "id": 0,
+          "color": "#7EB26D",
+          "query": "*:*",
+          "alias": "",
+          "pin": false
+        },
         "1": {
           "id": 1,
           "color": "#705DA0",
@@ -23,7 +29,7 @@
         "2": {
           "id": 2,
           "color": "#CCA300",
-          "query": "tweet_text_t"GOOG",
+          "query": "tweet_text_t:GOOG",
           "alias": "",
           "pin": false
         },
@@ -44,7 +50,7 @@
         "5": {
           "id": 5,
           "color": "#1F78C1",
-          "query": "*:*",
+          "query": "tweet_text_t:hortonworks",
           "alias": "",
           "pin": false
         }
@@ -54,7 +60,8 @@
         2,
         3,
         4,
-        5
+        5,
+        0
       ]
     },
     "filter": {
@@ -69,8 +76,8 @@
           "to": "NOW/DAY%2B1DAY",
           "field": "created_at_dt",
           "type": "time",
-          "fromDateObj": "2015-09-05T05:03:55.488Z",
-          "toDateObj": "2015-12-14T06:03:55.488Z",
+          "fromDateObj": "2015-09-13T19:26:32.256Z",
+          "toDateObj": "2015-12-22T20:26:32.256Z",
           "mandate": "must",
           "active": true,
           "alias": "",
@@ -124,7 +131,7 @@
           "timeformat": "",
           "refresh": {
             "enable": true,
-            "interval": 3,
+            "interval": 15,
             "min": 1
           },
           "filter_id": 0,
@@ -139,10 +146,14 @@
           "queries": {
             "mode": "all",
             "ids": [
-              7,
-              9
+              1,
+              2,
+              3,
+              4,
+              5,
+              0
             ],
-            "query": "q=tweet_text_t%3Asupport&df=id&fq=created_at_dt:[NOW/DAY-100DAY%20TO%20NOW/DAY%2B1DAY]&fq=-tweet_text_t:RT&wt=json&rows=0\nq=*%3A*&df=id&fq=created_at_dt:[NOW/DAY-100DAY%20TO%20NOW/DAY%2B1DAY]&fq=-tweet_text_t:RT&wt=json&rows=0\n",
+            "query": "q=tweet_text_t%3AAAPL&df=id&fq=created_at_dt:[NOW/DAY-100DAY%20TO%20NOW/DAY%2B1DAY]&fq=-tweet_text_t:RT&wt=json&rows=0\nq=tweet_text_t%3AGOOG&df=id&fq=created_at_dt:[NOW/DAY-100DAY%20TO%20NOW/DAY%2B1DAY]&fq=-tweet_text_t:RT&wt=json&rows=0\nq=tweet_text_t%3AMSFT&df=id&fq=created_at_dt:[NOW/DAY-100DAY%20TO%20NOW/DAY%2B1DAY]&fq=-tweet_text_t:RT&wt=json&rows=0\nq=tweet_text_t%3AORCL&df=id&fq=created_at_dt:[NOW/DAY-100DAY%20TO%20NOW/DAY%2B1DAY]&fq=-tweet_text_t:RT&wt=json&rows=0\nq=tweet_text_t%3Ahortonworks&df=id&fq=created_at_dt:[NOW/DAY-100DAY%20TO%20NOW/DAY%2B1DAY]&fq=-tweet_text_t:RT&wt=json&rows=0\nq=*%3A*&df=id&fq=created_at_dt:[NOW/DAY-100DAY%20TO%20NOW/DAY%2B1DAY]&fq=-tweet_text_t:RT&wt=json&rows=0\n",
             "basic_query": "",
             "custom": ""
           },
@@ -186,10 +197,14 @@
           "queries": {
             "mode": "all",
             "ids": [
-              7,
-              9
+              1,
+              2,
+              3,
+              4,
+              5,
+              0
             ],
-            "query": "q=tweet_text_t%3Asupport OR *%3A*&df=id&wt=json&fq=created_at_dt:[NOW/DAY-100DAY%20TO%20NOW/DAY%2B1DAY]&fq=-tweet_text_t:RT&rows=0&facet=true&facet.field=tweet_place_country_code_s&facet.limit=1000000",
+            "query": "q=*%3A* OR tweet_text_t%3AAAPL OR tweet_text_t%3AGOOG OR tweet_text_t%3AMSFT OR tweet_text_t%3AORCL OR tweet_text_t%3Ahortonworks&df=id&wt=json&fq=created_at_dt:[NOW/DAY-100DAY%20TO%20NOW/DAY%2B1DAY]&fq=-tweet_text_t:RT&rows=0&facet=true&facet.field=tweet_place_country_code_s&facet.limit=10000",
             "custom": ""
           },
           "mode": "count",
@@ -201,7 +216,7 @@
             "#A0E2E2",
             "#265656"
           ],
-          "size": 1000000,
+          "size": 10000,
           "exclude": [],
           "spyable": true,
           "index_limit": 0,
@@ -232,10 +247,14 @@
           "queries": {
             "mode": "all",
             "ids": [
-              7,
-              9
+              1,
+              2,
+              3,
+              4,
+              5,
+              0
             ],
-            "query": "q=tweet_text_t%3Asupport&df=id&wt=json&rows=0&&fq=-tweet_text_t:RT&facet=true&facet.range=created_at_dt&facet.range.start=2015-09-05T05:03:55.488Z&facet.range.end=2015-12-14T06:03:55.488Z&facet.range.gap=%2B101DAY&facet.range.hardend=true&facet.range.other=between\n\nq=tweet_text_t%3Asupport&df=id&wt=json&rows=0&&fq=-tweet_text_t:RT&facet=true&facet.range=created_at_dt&facet.range.start=2015-09-04T05:03:55.488Z&facet.range.end=2015-12-13T06:03:55.488Z&facet.range.gap=%2B101DAY&facet.range.hardend=true&facet.range.other=between\n-----------\nq=*%3A*&df=id&wt=json&rows=0&&fq=-tweet_text_t:RT&facet=true&facet.range=created_at_dt&facet.range.start=2015-09-05T05:03:55.488Z&facet.range.end=2015-12-14T06:03:55.488Z&facet.range.gap=%2B101DAY&facet.range.hardend=true&facet.range.other=between\n\nq=*%3A*&df=id&wt=json&rows=0&&fq=-tweet_text_t:RT&facet=true&facet.range=created_at_dt&facet.range.start=2015-09-04T05:03:55.488Z&facet.range.end=2015-12-13T06:03:55.488Z&facet.range.gap=%2B101DAY&facet.range.hardend=true&facet.range.other=between\n-----------\n"
+            "query": "q=tweet_text_t%3AAAPL&df=id&wt=json&rows=0&&fq=-tweet_text_t:RT&facet=true&facet.range=created_at_dt&facet.range.start=2015-09-13T19:26:32.256Z&facet.range.end=2015-12-22T20:26:32.256Z&facet.range.gap=%2B101DAY&facet.range.hardend=true&facet.range.other=between\n\nq=tweet_text_t%3AAAPL&df=id&wt=json&rows=0&&fq=-tweet_text_t:RT&facet=true&facet.range=created_at_dt&facet.range.start=2015-09-12T19:26:32.256Z&facet.range.end=2015-12-21T20:26:32.256Z&facet.range.gap=%2B101DAY&facet.range.hardend=true&facet.range.other=between\n-----------\nq=tweet_text_t%3AGOOG&df=id&wt=json&rows=0&&fq=-tweet_text_t:RT&facet=true&facet.range=created_at_dt&facet.range.start=2015-09-13T19:26:32.256Z&facet.range.end=2015-12-22T20:26:32.256Z&facet.range.gap=%2B101DAY&facet.range.hardend=true&facet.range.other=between\n\nq=tweet_text_t%3AGOOG&df=id&wt=json&rows=0&&fq=-tweet_text_t:RT&facet=true&facet.range=created_at_dt&facet.range.start=2015-09-12T19:26:32.256Z&facet.range.end=2015-12-21T20:26:32.256Z&facet.range.gap=%2B101DAY&facet.range.hardend=true&facet.range.other=between\n-----------\nq=tweet_text_t%3AMSFT&df=id&wt=json&rows=0&&fq=-tweet_text_t:RT&facet=true&facet.range=created_at_dt&facet.range.start=2015-09-13T19:26:32.256Z&facet.range.end=2015-12-22T20:26:32.256Z&facet.range.gap=%2B101DAY&facet.range.hardend=true&facet.range.other=between\n\nq=tweet_text_t%3AMSFT&df=id&wt=json&rows=0&&fq=-tweet_text_t:RT&facet=true&facet.range=created_at_dt&facet.range.start=2015-09-12T19:26:32.256Z&facet.range.end=2015-12-21T20:26:32.256Z&facet.range.gap=%2B101DAY&facet.range.hardend=true&facet.range.other=between\n-----------\nq=tweet_text_t%3AORCL&df=id&wt=json&rows=0&&fq=-tweet_text_t:RT&facet=true&facet.range=created_at_dt&facet.range.start=2015-09-13T19:26:32.256Z&facet.range.end=2015-12-22T20:26:32.256Z&facet.range.gap=%2B101DAY&facet.range.hardend=true&facet.range.other=between\n\nq=tweet_text_t%3AORCL&df=id&wt=json&rows=0&&fq=-tweet_text_t:RT&facet=true&facet.range=created_at_dt&facet.range.start=2015-09-12T19:26:32.256Z&facet.range.end=2015-12-21T20:26:32.256Z&facet.range.gap=%2B101DAY&facet.range.hardend=true&facet.range.other=between\n-----------\nq=tweet_text_t%3Ahortonworks&df=id&wt=json&rows=0&&fq=-tweet_text_t:RT&facet=true&facet.range=created_at_dt&facet.range.start=2015-09-13T19:26:32.256Z&facet.range.end=2015-12-22T20:26:32.256Z&facet.range.gap=%2B101DAY&facet.range.hardend=true&facet.range.other=between\n\nq=tweet_text_t%3Ahortonworks&df=id&wt=json&rows=0&&fq=-tweet_text_t:RT&facet=true&facet.range=created_at_dt&facet.range.start=2015-09-12T19:26:32.256Z&facet.range.end=2015-12-21T20:26:32.256Z&facet.range.gap=%2B101DAY&facet.range.hardend=true&facet.range.other=between\n-----------\nq=*%3A*&df=id&wt=json&rows=0&&fq=-tweet_text_t:RT&facet=true&facet.range=created_at_dt&facet.range.start=2015-09-13T19:26:32.256Z&facet.range.end=2015-12-22T20:26:32.256Z&facet.range.gap=%2B101DAY&facet.range.hardend=true&facet.range.other=between\n\nq=*%3A*&df=id&wt=json&rows=0&&fq=-tweet_text_t:RT&facet=true&facet.range=created_at_dt&facet.range.start=2015-09-12T19:26:32.256Z&facet.range.end=2015-12-21T20:26:32.256Z&facet.range.gap=%2B101DAY&facet.range.hardend=true&facet.range.other=between\n-----------\n"
           },
           "style": {
             "font-size": "14pt"
@@ -265,10 +284,14 @@
           "queries": {
             "mode": "all",
             "ids": [
-              7,
-              9
+              1,
+              2,
+              3,
+              4,
+              5,
+              0
             ],
-            "query": "q=tweet_text_t%3Asupport&df=id&wt=json&rows=0&fq=created_at_dt:[NOW/DAY-100DAY%20TO%20NOW/DAY%2B1DAY]&fq=-tweet_text_t:RT&facet=true&facet.range=created_at_dt&facet.range.start=NOW/DAY-100DAY&facet.range.end=NOW/DAY%2B1DAY&facet.range.gap=%2B12HOUR\nq=*%3A*&df=id&wt=json&rows=0&fq=created_at_dt:[NOW/DAY-100DAY%20TO%20NOW/DAY%2B1DAY]&fq=-tweet_text_t:RT&facet=true&facet.range=created_at_dt&facet.range.start=NOW/DAY-100DAY&facet.range.end=NOW/DAY%2B1DAY&facet.range.gap=%2B12HOUR\n",
+            "query": "q=tweet_text_t%3AAAPL&df=id&wt=json&rows=0&fq=created_at_dt:[NOW/DAY-100DAY%20TO%20NOW/DAY%2B1DAY]&fq=-tweet_text_t:RT&facet=true&facet.range=created_at_dt&facet.range.start=NOW/DAY-100DAY&facet.range.end=NOW/DAY%2B1DAY&facet.range.gap=%2B6HOUR\nq=tweet_text_t%3AGOOG&df=id&wt=json&rows=0&fq=created_at_dt:[NOW/DAY-100DAY%20TO%20NOW/DAY%2B1DAY]&fq=-tweet_text_t:RT&facet=true&facet.range=created_at_dt&facet.range.start=NOW/DAY-100DAY&facet.range.end=NOW/DAY%2B1DAY&facet.range.gap=%2B6HOUR\nq=tweet_text_t%3AMSFT&df=id&wt=json&rows=0&fq=created_at_dt:[NOW/DAY-100DAY%20TO%20NOW/DAY%2B1DAY]&fq=-tweet_text_t:RT&facet=true&facet.range=created_at_dt&facet.range.start=NOW/DAY-100DAY&facet.range.end=NOW/DAY%2B1DAY&facet.range.gap=%2B6HOUR\nq=tweet_text_t%3AORCL&df=id&wt=json&rows=0&fq=created_at_dt:[NOW/DAY-100DAY%20TO%20NOW/DAY%2B1DAY]&fq=-tweet_text_t:RT&facet=true&facet.range=created_at_dt&facet.range.start=NOW/DAY-100DAY&facet.range.end=NOW/DAY%2B1DAY&facet.range.gap=%2B6HOUR\nq=tweet_text_t%3Ahortonworks&df=id&wt=json&rows=0&fq=created_at_dt:[NOW/DAY-100DAY%20TO%20NOW/DAY%2B1DAY]&fq=-tweet_text_t:RT&facet=true&facet.range=created_at_dt&facet.range.start=NOW/DAY-100DAY&facet.range.end=NOW/DAY%2B1DAY&facet.range.gap=%2B6HOUR\nq=*%3A*&df=id&wt=json&rows=0&fq=created_at_dt:[NOW/DAY-100DAY%20TO%20NOW/DAY%2B1DAY]&fq=-tweet_text_t:RT&facet=true&facet.range=created_at_dt&facet.range.start=NOW/DAY-100DAY&facet.range.end=NOW/DAY%2B1DAY&facet.range.gap=%2B6HOUR\n",
             "custom": ""
           },
           "max_rows": 100000,
@@ -276,7 +299,7 @@
           "group_field": "polarity_s",
           "auto_int": false,
           "resolution": 100,
-          "interval": "12h",
+          "interval": "6h",
           "intervals": [
             "auto",
             "1s",
@@ -332,10 +355,14 @@
           "queries": {
             "mode": "all",
             "ids": [
-              7,
-              9
+              1,
+              2,
+              3,
+              4,
+              5,
+              0
             ],
-            "query": "q=tweet_text_t%3Asupport OR *%3A*&df=id&wt=json&rows=0&fq=created_at_dt:[NOW/DAY-100DAY%20TO%20NOW/DAY%2B1DAY]&fq=-tweet_text_t:RT&facet=true&facet.field=tweet_lang_s&facet.limit=10&facet.missing=true",
+            "query": "q=*%3A* OR tweet_text_t%3AAAPL OR tweet_text_t%3AGOOG OR tweet_text_t%3AMSFT OR tweet_text_t%3AORCL OR tweet_text_t%3Ahortonworks&df=id&wt=json&rows=0&fq=created_at_dt:[NOW/DAY-100DAY%20TO%20NOW/DAY%2B1DAY]&fq=-tweet_text_t:RT&facet=true&facet.field=tweet_lang_s&facet.limit=10&facet.missing=true",
             "custom": ""
           },
           "mode": "count",
@@ -428,10 +455,14 @@
           "queries": {
             "mode": "all",
             "ids": [
-              7,
-              9
+              1,
+              2,
+              3,
+              4,
+              5,
+              0
             ],
-            "query": "q=tweet_text_t%3Asupport OR *%3A*&df=id&wt=json&rows=0&fq=created_at_dt:[NOW/DAY-100DAY%20TO%20NOW/DAY%2B1DAY]&fq=-tweet_text_t:RT&facet=true&facet.field=tweet_text_t&facet.limit=20",
+            "query": "q=*%3A* OR tweet_text_t%3AAAPL OR tweet_text_t%3AGOOG OR tweet_text_t%3AMSFT OR tweet_text_t%3AORCL OR tweet_text_t%3Ahortonworks&df=id&wt=json&rows=0&fq=created_at_dt:[NOW/DAY-100DAY%20TO%20NOW/DAY%2B1DAY]&fq=-tweet_text_t:RT&facet=true&facet.field=tweet_text_t&facet.limit=20",
             "custom": "&fq=-tweet_text_t:t.co&fq=-tweet_text_t:https&fq=-tweet_text_t:the&fq=-tweet_text_t:on&fq=-tweet_text_t:and&fq=-tweet_text_t:at&fq=-tweet_text_t:a&fq=-tweet_text_t:is&fq=-tweet_text_t:you&fq=-tweet_text_t:of&fq=-tweet_text_t:to&fq=-tweet_text_t:in&fq=-tweet_text_t:http&fq=-tweet_text_t:whitehouse&fq=-tweet_text_t:presidentruvi&fq=-tweet_text_t:amp&fq=-tweet_text_t:r32&fq=-tweet_text_t:potus&fq=-tweet_text_t:un&fq=-tweet_text_t:cnn&fq=-tweet_text_t:cia&fq=-tweet_text_t:fbi&fq=-tweet_text_t:nsagov&fq=-tweet_text_t:barackobama&fq=-tweet_text_t:robertdowneyjr&fq=-tweet_text_t:rihanna&fq=-tweet_text_t:r32r"
           },
           "field": "tweet_text_t",
@@ -450,10 +481,14 @@
           "queries": {
             "mode": "all",
             "ids": [
-              7,
-              9
+              1,
+              2,
+              3,
+              4,
+              5,
+              0
             ],
-            "query": "q=tweet_text_t%3Asupport OR *%3A*&df=id&wt=json&rows=0&fq=created_at_dt:[NOW/DAY-100DAY%20TO%20NOW/DAY%2B1DAY]&fq=-tweet_text_t:RT&facet=true&facet.field=user_screen_name_s&facet.limit=10&facet.missing=true",
+            "query": "q=*%3A* OR tweet_text_t%3AAAPL OR tweet_text_t%3AGOOG OR tweet_text_t%3AMSFT OR tweet_text_t%3AORCL OR tweet_text_t%3Ahortonworks&df=id&wt=json&rows=0&fq=created_at_dt:[NOW/DAY-100DAY%20TO%20NOW/DAY%2B1DAY]&fq=-tweet_text_t:RT&facet=true&facet.field=user_screen_name_s&facet.limit=10&facet.missing=true",
             "custom": ""
           },
           "mode": "count",
@@ -546,10 +581,14 @@
           "queries": {
             "mode": "all",
             "ids": [
-              7,
-              9
+              1,
+              2,
+              3,
+              4,
+              5,
+              0
             ],
-            "query": "q=tweet_text_t%3Asupport OR *%3A*&df=id&wt=json&rows=0&fq=created_at_dt:[NOW/DAY-100DAY%20TO%20NOW/DAY%2B1DAY]&fq=-tweet_text_t:RT&facet=true&facet.field=quoted_status_user_screen_name_s&facet.limit=10&facet.missing=true",
+            "query": "q=*%3A* OR tweet_text_t%3AAAPL OR tweet_text_t%3AGOOG OR tweet_text_t%3AMSFT OR tweet_text_t%3AORCL OR tweet_text_t%3Ahortonworks&df=id&wt=json&rows=0&fq=created_at_dt:[NOW/DAY-100DAY%20TO%20NOW/DAY%2B1DAY]&fq=-tweet_text_t:RT&facet=true&facet.field=quoted_status_user_screen_name_s&facet.limit=10&facet.missing=true",
             "custom": ""
           },
           "mode": "count",
@@ -652,15 +691,19 @@
           "queries": {
             "mode": "all",
             "ids": [
-              7,
-              9
+              1,
+              2,
+              3,
+              4,
+              5,
+              0
             ],
-            "query": "q=tweet_text_t%3Asupport OR *%3A*&df=id&fq=created_at_dt:[NOW/DAY-100DAY%20TO%20NOW/DAY%2B1DAY]&fq=-tweet_text_t:RT&sort=created_at_dt desc&wt=json&rows=1000",
-            "basic_query": "q=tweet_text_t%3Asupport OR *%3A*&df=id&fq=created_at_dt:[NOW/DAY-100DAY%20TO%20NOW/DAY%2B1DAY]&fq=-tweet_text_t:RT&sort=created_at_dt desc",
+            "query": "q=*%3A* OR tweet_text_t%3AAAPL OR tweet_text_t%3AGOOG OR tweet_text_t%3AMSFT OR tweet_text_t%3AORCL OR tweet_text_t%3Ahortonworks&df=id&fq=created_at_dt:[NOW/DAY-100DAY%20TO%20NOW/DAY%2B1DAY]&fq=-tweet_text_t:RT&sort=created_at_dt desc&wt=json&rows=1050",
+            "basic_query": "q=*%3A* OR tweet_text_t%3AAAPL OR tweet_text_t%3AGOOG OR tweet_text_t%3AMSFT OR tweet_text_t%3AORCL OR tweet_text_t%3Ahortonworks&df=id&fq=created_at_dt:[NOW/DAY-100DAY%20TO%20NOW/DAY%2B1DAY]&fq=-tweet_text_t:RT&sort=created_at_dt desc",
             "custom": ""
           },
-          "size": 100,
-          "pages": 10,
+          "size": 30,
+          "pages": 35,
           "offset": 0,
           "sort": [
             "created_at_dt",
@@ -687,7 +730,7 @@
           "normTimes": true,
           "spyable": false,
           "saveOption": "json",
-          "exportSize": 1000,
+          "exportSize": 1050,
           "exportAll": true,
           "displayLinkIcon": true,
           "imageFields": [
@@ -741,7 +784,7 @@
     "dropdown_collections": false
   },
   "solr": {
-    "server": "http://sandbox.hortonworks.com:8983/solr/",
+    "server": "http://localhost:8983/solr/",
     "core_name": "tweets",
     "core_list": [
       "tweets_shard1_replica1"
